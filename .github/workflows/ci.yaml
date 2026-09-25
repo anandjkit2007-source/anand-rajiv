@@ -1,16 +1,13 @@
-```yaml
 name: Terraform CI
 
 on:
   push:
     branches:
       - feature
-
   workflow_dispatch:
 
 jobs:
   terraform-ci:
-
     runs-on: ubuntu-latest
 
     env:
@@ -20,7 +17,6 @@ jobs:
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 
     steps:
-
       # 1. Checkout source code
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -29,13 +25,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          creds: >
-            {
-              "clientId": "${{ secrets.AZURE_CLIENT_ID }}",
-              "clientSecret": "${{ secrets.AZURE_CLIENT_SECRET }}",
-              "subscriptionId": "${{ secrets.AZURE_SUBSCRIPTION_ID }}",
-              "tenantId": "${{ secrets.AZURE_TENANT_ID }}"
-            }
+          creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
 
       # 3. Install Terraform
       - name: Setup Terraform
@@ -54,4 +44,3 @@ jobs:
       # 6. Terraform Plan
       - name: Terraform Plan
         run: terraform plan
-```
