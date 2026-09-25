@@ -10,6 +10,10 @@ jobs:
   terraform-ci:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./environment/preprod
+
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
