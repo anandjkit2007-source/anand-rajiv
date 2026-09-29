@@ -6,7 +6,12 @@ rgs = {
     location = "eastus"
 
   }
+ rg2 = {
 
+    name     = "wipro_rg2"
+    location = "eastus"
+
+  }
 }
 
 stgs = {
@@ -22,4 +27,14 @@ storage1 = {
 
 }
 
+storage2 = { 
+  name                     = "wiprostg10002"
+  resource_group_name      = "wipro_rg2"
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+
+
+}
 }
