@@ -12,7 +12,7 @@ rgs = {
 stgs = {
 
 storage1 = { 
-  name                     = "anandstg10001"
+  name                     = "wiprostg10001"
   resource_group_name      = "wipro_rg1"
   location                 = "eastus"
   account_tier             = "Standard"
